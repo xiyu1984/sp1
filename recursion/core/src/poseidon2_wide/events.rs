@@ -38,7 +38,7 @@ pub struct Poseidon2AbsorbEvent<F> {
 }
 
 impl<F> Poseidon2AbsorbEvent<F> {
-    pub(crate) fn new(
+    pub fn new(
         clk: F,
         hash_and_absorb_num: F,
         input_addr: F,
@@ -59,7 +59,7 @@ impl<F> Poseidon2AbsorbEvent<F> {
 }
 
 impl<F: PrimeField32> Poseidon2AbsorbEvent<F> {
-    pub(crate) fn populate_iterations(
+    pub fn populate_iterations(
         &mut self,
         start_addr: F,
         input_len: F,
