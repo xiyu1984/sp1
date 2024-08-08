@@ -7,7 +7,7 @@ pub trait CurveOperations<const NUM_WORDS: usize> {
 
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
 pub struct AffinePoint<C: CurveOperations<NUM_WORDS>, const NUM_WORDS: usize> {
-    pub(crate) limbs: [u32; NUM_WORDS],
+    pub limbs: [u32; NUM_WORDS],
     _marker: std::marker::PhantomData<C>,
 }
 
