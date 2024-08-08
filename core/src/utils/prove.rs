@@ -667,7 +667,7 @@ pub mod baby_bear_poseidon2 {
         let compress = MyCompress::new(perm.clone());
         let challenge_mmcs = ChallengeMmcs::new(ValMmcs::new(hash, compress));
         let num_queries = match std::env::var("FRI_QUERIES") {
-            Ok(value) => value.parse().unwrap(),
+            Ok(value) => value.parse().unwrap_or(33),
             Err(_) => 33,
         };
         FriConfig {

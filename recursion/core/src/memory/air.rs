@@ -68,8 +68,10 @@ impl<F: PrimeField32> MachineAir<F> for MemoryGlobalChip {
                 let (addr, timestamp, value) =
                     &input.last_memory_record[i - input.first_memory_record.len()];
                 let last = i == nb_events - 1;
+                let temp = (F::zero(), F::zero(), Block::from(F::zero()));
                 let (next_addr, _, _) = if last {
-                    &(F::zero(), F::zero(), Block::from(F::zero()))
+                    // &(F::zero(), F::zero(), Block::from(F::zero()))
+                    &temp
                 } else {
                     &input.last_memory_record[i - input.first_memory_record.len() + 1]
                 };
